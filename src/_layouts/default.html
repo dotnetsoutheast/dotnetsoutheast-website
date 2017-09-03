@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+    <script src="https://use.typekit.net/lyv4ark.js"></script>
+    <script>
+        try {
+            Typekit.load({
+                async: true
+            });
+        } catch (e) {}
+
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
+    <link rel="apple-touch-icon" href="/images/icon.png" type="image/png" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url | remove:" index.html " | remove:".html " }}"/>
+    <script src="/assets/js/main.js" async></script>
+    <meta charset="utf-8" />
+    <meta name="referrer" content="origin" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> {% if page.path contains ".markdown" %}
+    <meta property="og:title" content="{{ page.title | xml_escape | smartify }}" />
+    <meta property="og:description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines }}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" /> {% if page.image.src %}
+    <meta property="og:image" content="{{ site.url }}/image/640x360/100q/{{ page.image.src }}" />
+    <meta name="twitter:card" content="summary_large_image" /> {% else %}
+    <meta property="og:image" content="{{ site.url }}/images/icon.png" />
+    <meta name="twitter:card" content="summary" /> {% endif %}
+    <meta name="twitter:site" content="@dotnetsoutheast" /> {% endif %}
+    <title>{% if page.title != nil %}{{ page.title | smartify }} / {% endif %}{{ site.title }}</title>
+</head>
+
+<body>
+
+    <div class="band band--groovy">
+      <div class="container">
+        {% include banner.html %}
+        <hr>
+
+        <div class="row">
+          <div class="eight columns">
+            <h2>.NET South East is a new .NET and C# meetup group in Brighton, UK.</h2>
+            <p>If you're a .NET developer, come and join us in learning about .NET and related technologies from expert speakers and enthusiasts.</p>
+            <p><button class="button-primary">View next meetup</button></p>
+          </div>
+          <div class="four columns"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <main role="main">
+        {{ content }}
+    </main>
+
+    {% comment %} {% include contentinfo.html %} {% endcomment %} {% comment %} {% include offline.html %} {% endcomment %}
+    
+    {% include footer.html %}
+
+</body>
+
+</html>

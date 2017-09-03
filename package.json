@@ -1,0 +1,52 @@
+{
+  "name": "dotnetsoutheast.github.io",
+  "version": "1.0.0",
+  "description": ".NET South East website",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf www",
+    "dev": "npm run clean && concurrently 'npm run webpack:dev' 'npm run stylesheets:dev' 'npm run jekyll:dev'",
+    "build": "npm run clean && npm run stylesheets && npm run webpack && npm run jekyll",
+    "jekyll": "cross-env JEKYLL_ENV=production jekyll build --config config.yml",
+    "jekyll:dev": "jekyll serve --config config.yml",
+    "stylesheets": "npm run stylesheets:compile && npm run stylesheets:postcss",
+    "stylesheets:dev": "node-sass src/assets/scss/main.scss --output-style=compressed --output=www/assets/css/ --watch",
+    "stylesheets:compile": "node-sass src/assets/scss/main.scss --output-style=compressed --output=www/assets/css/",
+    "stylesheets:postcss": "postcss --no-map www/assets/css/main.css --output=www/assets/css/main.css",
+    "webpack": "cross-env NODE_ENV=production webpack --progress --config webpack.config.js",
+    "webpack:dev": "webpack --progress --config webpack.config.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dotnetsoutheast/dotnetsoutheast.github.io.git"
+  },
+  "author": "James Wragg <me@jameswragg.com> (http://jameswragg.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dotnetsoutheast/dotnetsoutheast.github.io/issues"
+  },
+  "homepage": "https://github.com/dotnetsoutheast/dotnetsoutheast.github.io#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.3",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-runtime": "^6.26.0",
+    "concurrently": "^3.5.0",
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.7",
+    "cssnano": "^3.10.0",
+    "node-sass": "^4.5.3",
+    "postcss-cli": "^4.1.0",
+    "postcss-loader": "^2.0.6",
+    "resolve-url-loader": "^2.1.0",
+    "rimraf": "^2.6.1",
+    "sass-loader": "^6.0.6",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.5.5"
+  },
+  "dependencies": {},
+  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"]
+}

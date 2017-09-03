@@ -1,0 +1,83 @@
+@import 'normalize';
+@import 'skeleton';
+
+$fontfamily: 'museo-sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+body {
+  font-family: $fontfamily;
+  font-size: 21px;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: #5c2d91;
+}
+
+a:hover {
+  color: darken(#5c2d91, 5%);
+}
+
+.band {
+  padding: 70px 0;
+}
+.band--highlight {
+  background-color: #f1ecf6;
+}
+.band--groovy {
+  background: linear-gradient(90deg, #5c2d91 0%, #980462 100%);
+  color: #ffffff;
+
+  a {
+    color: #fff;
+  }
+
+  .button-primary {
+    color: #5c2d91;
+    background-color: #fff;
+    border-color: #fff;
+  }
+  .button-primary:hover {
+    color: #5c2d91;
+    background-color: darken(#fff, 2%);
+    border-color: darken(#fff, 2%);
+  }
+}
+
+.mainnav {
+  a {
+    display: block;
+    padding: 5px 15px;
+    border-radius: 5px;
+  }
+  a:hover {
+    background: rgba(0, 0, 0, 0.125);
+  }
+}
+nav a {
+  text-decoration: none;
+}
+
+// Utilities
+.u-text-right {
+  text-align: right;
+}
+.u-text-left {
+  text-align: left;
+}
+.u-text-center {
+  text-align: center;
+}
+ul.inline {
+  li {
+    display: inline-block;
+  }
+}
+ul.clean {
+  list-style: none;
+  a {
+    text-decoration: none;
+  }
+}

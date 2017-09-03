@@ -1,0 +1,8 @@
+title: .NET South East
+description: .NET South East based in Brighton, England.
+url: https://dotnetsoutheast.com
+source: ./src
+destination: ./www
+exclude: [assets/scripts, assets/scss]
+keep_files: [assets/js/main.js, assets/css/main.css]
+
