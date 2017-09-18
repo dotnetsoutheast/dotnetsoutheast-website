@@ -7,7 +7,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackCritical = require('webpack-critical');
 
 const dist = resolve(__dirname, 'www/assets/');
-console.log(dist)
 
 module.exports = {
   entry: {
