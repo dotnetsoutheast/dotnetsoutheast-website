@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish": "npm run build && gh-pages -t -d www -b gh-pages",
+    "deploy": "npm run build && gh-pages -t -d www -b gh-pages",
     "clean": "rimraf www",
     "dev": "npm run clean && concurrently 'npm run jekyll:dev' 'npm run webpack:dev' 'npm run stylesheets:dev'",
     "build": "npm run clean && npm run stylesheets && npm run jekyll && npm run webpack",
