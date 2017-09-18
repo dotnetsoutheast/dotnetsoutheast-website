@@ -1,0 +1,48 @@
+.banner-row {
+  display: flex;
+  align-items: flex-end;
+
+  & + hr {
+    margin-bottom: 96px;
+  }
+}
+.logo__img {
+  display: block;
+  width: 164px;
+  height: 87px;
+  fill: #fff;
+}
+.svg--black {
+  fill: #333;
+}
+
+.mainnav {
+  font-size: 2.1rem;
+  font-weight: 500;
+  ul,
+  li {
+    margin-bottom: 0;
+  }
+}
+
+.row--image-row {
+  margin-top: 3rem;
+}
+
+.button {
+  font-size: 2.4rem;
+  text-transform: none;
+  height: auto;
+  padding: 10px 30px;
+}
+
+.footer--copytext {
+  color: #747474;
+  font-size: 1.6rem;
+  a {
+    text-decoration: none;
+  }
+}
+.footer-links {
+  font-size: 2.1rem;
+}

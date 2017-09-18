@@ -58,3 +58,4 @@ typings/
 .env
 
 www/
+.DS_Store

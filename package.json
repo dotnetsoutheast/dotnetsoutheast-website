@@ -6,13 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf www",
-    "dev": "npm run clean && concurrently 'npm run webpack:dev' 'npm run stylesheets:dev' 'npm run jekyll:dev'",
-    "build": "npm run clean && npm run stylesheets && npm run webpack && npm run jekyll",
+    "dev": "npm run clean && concurrently 'npm run jekyll:dev' 'npm run webpack:dev' 'npm run stylesheets:dev'",
+    "build": "npm run clean && npm run stylesheets && npm run jekyll && npm run webpack",
     "jekyll": "cross-env JEKYLL_ENV=production jekyll build --config config.yml",
-    "jekyll:dev": "jekyll serve --config config.yml",
+    "jekyll:dev": "jekyll serve --config config.yml --incremental --trace",
     "stylesheets": "npm run stylesheets:compile && npm run stylesheets:postcss",
-    "stylesheets:dev": "node-sass src/assets/scss/main.scss --output-style=compressed --output=www/assets/css/ --watch",
-    "stylesheets:compile": "node-sass src/assets/scss/main.scss --output-style=compressed --output=www/assets/css/",
+    "stylesheets:dev": "node-sass assets/scss/main.scss --output-style=compressed --output=www/assets/css/ --watch",
+    "stylesheets:compile": "node-sass assets/scss/main.scss --output-style=compressed --output=www/assets/css/",
     "stylesheets:postcss": "postcss --no-map www/assets/css/main.css --output=www/assets/css/main.css",
     "webpack": "cross-env NODE_ENV=production webpack --progress --config webpack.config.js",
     "webpack:dev": "webpack --progress --config webpack.config.js --watch"
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/dotnetsoutheast/dotnetsoutheast.github.io#readme",
   "devDependencies": {
-    "autoprefixer": "^7.1.3",
+    "autoprefixer": "^7.1.4",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -38,15 +38,24 @@
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
+    "file-loader": "^0.11.2",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.5.3",
-    "postcss-cli": "^4.1.0",
+    "postcss-cli": "^4.1.1",
     "postcss-loader": "^2.0.6",
     "resolve-url-loader": "^2.1.0",
-    "rimraf": "^2.6.1",
+    "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
     "uglifyjs-webpack-plugin": "^0.4.6",
-    "webpack": "^3.5.5"
+    "webpack": "^3.6.0",
+    "webpack-critical": "^1.0.0",
+    "webpack-svg-sprite-plugin": "^1.2.0"
   },
   "dependencies": {},
-  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"]
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }

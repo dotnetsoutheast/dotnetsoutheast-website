@@ -1,15 +1,18 @@
+@import 'variables';
 @import 'normalize';
+@import 'fonts';
 @import 'skeleton';
+@import 'furniture';
 
-$fontfamily: 'museo-sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-body {
-  font-family: $fontfamily;
-  font-size: 21px;
+img,
+svg {
+  max-width: 100%;
 }
 
-img {
-  max-width: 100%;
+body > svg {
+  position: absolute;
+  width: 0;
+  height: 0;
 }
 
 a {
@@ -45,6 +48,21 @@ a:hover {
     border-color: darken(#fff, 2%);
   }
 }
+.bg-seagulls {
+  position: relative;
+  fill: #fff;
+  &:before {
+    display: block;
+    content: url(/assets/svgs/seagulls.svg);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0.35;
+  }
+  .columns {
+    position: relative;
+  }
+}
 
 .mainnav {
   a {
@@ -70,6 +88,12 @@ nav a {
 .u-text-center {
   text-align: center;
 }
+.u-row--flex {
+  display: flex;
+}
+.u-row--vert-center {
+  align-self: center;
+}
 ul.inline {
   li {
     display: inline-block;
@@ -79,5 +103,18 @@ ul.clean {
   list-style: none;
   a {
     text-decoration: none;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 22px;
+  position: relative;
+  top: 2px;
+  margin-right: 1rem;
+
+  &.icon--medium {
+    width: 30px;
+    height: 32px;
   }
 }
