@@ -10,7 +10,7 @@ function toggleMenu(e) {
 }
 
 function primaryNav() {
-  const t = document.querySelector('#smallscreen-menu');
+  const t = document.querySelector('template');
   const smallScreenNav = document.importNode(t.content, true).querySelector('div');
   smallScreenNav.className = 'smallscreen-menu';
   document.body.appendChild(smallScreenNav);
