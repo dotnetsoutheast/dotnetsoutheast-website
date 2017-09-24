@@ -1,0 +1,132 @@
+.logo {
+  margin: 0 0 8px;
+}
+.banner-row {
+  display: flex;
+  align-items: flex-end;
+
+  & + hr {
+    margin-bottom: 96px;
+  }
+}
+@media (max-width: 820px) {
+  .banner-row + hr {
+    margin-bottom: 1rem;
+  }
+}
+.logo__img {
+  display: block;
+  width: 164px;
+  height: 87px;
+  fill: #fff;
+}
+.svg--black {
+  fill: #333;
+}
+
+.mainnav {
+  font-size: 2.1rem;
+  font-weight: 500;
+  ul,
+  li {
+    margin-bottom: 0;
+  }
+}
+
+.row--image-row {
+  margin-top: 3rem;
+}
+
+.button {
+  font-size: 2.4rem;
+  text-transform: none;
+  height: auto;
+  padding: 10px 30px;
+}
+
+.footer--copytext {
+  color: #747474;
+  font-size: 1.6rem;
+  a {
+    text-decoration: none;
+  }
+}
+@media (max-width: 820px) {
+  .footer--copytext {
+    text-align: center;
+  }
+}
+.footer-links {
+  font-size: 2.1rem;
+}
+
+.smallscreen-menu {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  transition: opacity 0.2s ease;
+  height: 100vh;
+  padding: 1rem;
+  width: 100%;
+  z-index: 20;
+  background: $groovyBg;
+  display: none;
+  color: #fff;
+  opacity: 0;
+
+  .mainnav {
+    width: 100%;
+  }
+  ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  li {
+    text-align: center;
+  }
+  li a {
+    color: #fff;
+  }
+}
+.smallscreen-menu--active .smallscreen-menu {
+  display: block;
+  opacity: 1;
+}
+
+.smallscreen-menu-button {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid #fff;
+  font-size: 2rem;
+  padding: 5px 20px;
+  border-radius: 2rem;
+  display: block;
+}
+.smallscreen-menu .smallscreen-menu-button {
+  position: static;
+  text-align: right;
+  border: none;
+}
+
+@media (min-width: 820px) {
+  .smallscreen-menu-button {
+    display: none;
+  }
+}
+.banner-row .mainnav {
+  display: none;
+}
+@media (min-width: 820px) {
+  .banner-row .mainnav {
+    display: block;
+  }
+}
+
+.smallscreen-menu--active {
+  overflow: hidden;
+}

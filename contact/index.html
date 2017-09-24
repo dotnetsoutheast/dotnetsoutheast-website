@@ -1,33 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-gb">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preload" href="/assets/fonts/museo-sans-300.woff2" as="font" crossorigin="true" />
-  <link rel="preload" href="/assets/fonts/museo-sans-500.woff2" as="font" crossorigin="true" />
-
-  <link rel="stylesheet" href="/assets/css/main.css" />
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preload" href="/assets/fonts/museo-sans-300.woff2" as="font" crossorigin="true">
+  <link rel="preload" href="/assets/fonts/museo-sans-500.woff2" as="font" crossorigin="true">
   <link rel="shortcut icon" href="/icon.png">
   <link rel="apple-touch-icon-precomposed" href="/icon.png">
   <link rel="canonical" href="https://dotnetsoutheast.com/contact/"/>
-  
-  <meta property="og:title" content="" />
-  <meta property="og:description" content="" />
-  <meta property="og:url" content="https://dotnetsoutheast.com/contact/" />
-  
-  <meta property="og:image" content="https://dotnetsoutheast.com/images/icon.png" />
-  <meta name="twitter:card" content="summary" />
-  
-  <meta name="twitter:site" content="@dotnetsoutheast" />
-  
   <title>.NET South East</title>
+
+  <link href="/assets/css/main.css " rel="stylesheet">
+
 </head>
 
 <body>
-  <div class="band band--groovy">
-    <div class="container">
-      <div class="row banner-row">
+  <div class="band band--groovy ">
+    <div class="container ">
+      <header class="row banner-row">
     <div class="three columns">
         <h1 class="logo u-pull-left">
             <a class="logo__link" rel="home" href="/">
@@ -39,7 +30,7 @@
         </h1>
     </div>
     <div class="nine columns">
-        <nav class="mainnav u-pull-right">
+        <a href="#offcanvas" class="smallscreen-menu-button js-smallscreen-menu--toggle" aria-hidden="true">Menu</a> <nav class="mainnav u-pull-right">
   <ul class="inline">
     <li><a href="/">Home</a></li>
     <li><a href="https://www.meetup.com/dotnetsoutheast/">Next meetup</a></li>
@@ -49,12 +40,13 @@
 </nav>
 
     </div>
-</div>
- 
+</header>
+      <!--  -->
+      
     </div>
   </div>
 
-  <main role="main">
+  <main role="main ">
     <div class="band">
     <div class="container">
         <div class="row">
@@ -71,7 +63,8 @@
 
   <div class="band">
     <div class="container">
-        <div class="row footer-links">
+
+        <nav class="row footer-links">
             <div class="four columns">
                 <ul class="clean">
                     <li><a href="/">Home</a></li>
@@ -90,31 +83,35 @@
             </div>
             <div class="four columns">
                 <p class="u-pull-right">
-                    <svg class="logo__img svg--black"><title>.NET South East</title><use xlink:href="#dotnetse_logo" /></svg>
+                    <svg class="logo__img svg--black">
+                        <title>.NET South East</title>
+                        <use xlink:href="#dotnetse_logo" />
+                    </svg>
                 </p>
             </div>
-        </div>
+        </nav>
 
         <hr>
 
         <div class="row footer footer--copytext">
-            <div class="ten columns">
+            <div class="nine columns">
                 <p>&copy; Dotnet South East 2017. All rights reserved.</p>
             </div>
-            <div class="two columns u-text-right">
-                <p>
+            <div class="three columns">
+                <p class="social-icons">
                     <!-- <a href="#">
                         <svg class="icon icon--medium svg--black"><use xlink:href="#icon-youtube" /></svg>
                     </a> -->
                     <a href="https://twitter.com/dotnetsoutheast">
-                        <svg class="icon icon--medium svg--black"><use xlink:href="#icon-twitter" /></svg>
+                        <svg class="icon icon--medium svg--black">
+                            <use xlink:href="#icon-twitter" />
+                        </svg>
                     </a>
                 </p>
             </div>
         </div>
     </div>
 </div>
-
 
   <!-- SVG Sprite -->
   <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="dotnetse_logo" viewBox="0 0 686.3 361.2" xmlns="http://www.w3.org/2000/svg">
@@ -166,6 +163,24 @@
   <path class="gst0" d="M512.5 0c-113.3 17.7-148 103.6-148 103.6C332 43.1 239.9 30.9 204.2 28.5c-1.7-.1-2.1 2.3-.5 2.7C302.1 58.8 359.9 159.7 369 176.8c.5 1 2 .9 2.5-.1C427.7 56.5 491 14.4 513.4 2.7c1.4-.8.7-2.9-.9-2.7zM203.7 103.1c-65.5 2.3-85 56.1-85 56.1-22.4-58.4-90.8-69.1-117.2-71-1.6-.1-2 2.1-.5 2.7 72.5 25.4 107.3 102.6 114 118.9.5 1.1 2 1.1 2.5 0 22.7-51.9 73.7-93.7 87.2-104.2 1-.8.3-2.5-1-2.5z"/>
 </symbol></svg>
 
+  <!-- Smallscreen Menu -->
+  <template id="smallscreen-menu ">
+    <div>
+      <a href="#offcanvas " class="smallscreen-menu-button js-smallscreen-menu--toggle " aria-hidden="true ">Close</a>
+      <!--  -->
+      <nav class="mainnav u-pull-right">
+  <ul class="inline">
+    <li><a href="/">Home</a></li>
+    <li><a href="https://www.meetup.com/dotnetsoutheast/">Next meetup</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Join us</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </template>
+
+  <script type="text/javascript " src="/assets/js/main.js "></script>
 </body>
 
 </html>

@@ -1,0 +1,152 @@
+@import 'variables';
+@import 'normalize';
+@import 'fonts';
+@import 'skeleton';
+@import 'furniture';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: $bodyFontSize - 1rem;
+}
+@media (min-width: 820px) {
+  body {
+    font-size: $bodyFontSize;
+  }
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+body > svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+a {
+  color: #5c2d91;
+}
+
+a:hover {
+  color: darken(#5c2d91, 5%);
+}
+
+.band {
+  padding: 70px 0;
+}
+.band--highlight {
+  background-color: #f1ecf6;
+}
+.band--groovy {
+  background: $groovyBg;
+  color: #ffffff;
+
+  a {
+    color: #fff;
+  }
+
+  .button-primary {
+    color: #5c2d91;
+    background-color: #fff;
+    border-color: #fff;
+  }
+  .button-primary:hover {
+    color: #5c2d91;
+    background-color: darken(#fff, 2%);
+    border-color: darken(#fff, 2%);
+  }
+}
+@media (max-width: 820px) {
+  .button {
+    font-size: 1.7rem;
+  }
+}
+.bg-seagulls {
+  position: relative;
+  fill: #fff;
+  &:before {
+    display: block;
+    content: url(/assets/svgs/seagulls.svg);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0.35;
+  }
+  .columns {
+    position: relative;
+  }
+}
+
+.mainnav {
+  a {
+    display: block;
+    padding: 5px 15px;
+    border-radius: 5px;
+  }
+  a:hover {
+    background: rgba(0, 0, 0, 0.125);
+  }
+}
+nav a {
+  text-decoration: none;
+}
+
+.social-icons {
+  text-align: center;
+}
+@media (min-width: 550px) {
+  .social-icons {
+    text-align: right;
+    .icon:last-child {
+      margin: 0;
+    }
+  }
+}
+
+// Utilities
+.u-text-right {
+  text-align: right;
+}
+.u-text-left {
+  text-align: left;
+}
+.u-text-center {
+  text-align: center;
+}
+.u-row--flex {
+  display: flex;
+}
+.u-row--vert-center {
+  align-self: center;
+}
+ul.inline {
+  li {
+    display: inline-block;
+  }
+}
+ul.clean {
+  list-style: none;
+  a {
+    text-decoration: none;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 22px;
+  position: relative;
+  top: 2px;
+  margin-right: 1rem;
+
+  &.icon--medium {
+    width: 30px;
+    height: 32px;
+  }
+}
