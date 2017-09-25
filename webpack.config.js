@@ -1,12 +1,10 @@
 const env = process.env.NODE_ENV;
+const { path, resolve } = require('path');
 const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const SvgSpritePlugin = require('webpack-svg-sprite-plugin');
-const { path, resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackCritical = require('webpack-critical');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const WebpackShellPlugin = require('webpack-shell-plugin');
 
 const wwwdir = resolve(__dirname, 'www/');
 
@@ -18,6 +16,7 @@ module.exports = {
   output: {
     publicPath: '/',
     path: wwwdir,
+    // filename: 'assets/js/main.[hash:7].js',
     filename: 'assets/js/main.js',
   },
   module: {
@@ -90,20 +89,11 @@ module.exports = {
       filename: resolve(__dirname, 'www/index.html'),
       inject: false,
     }),
-    // new WebpackCritical({
-    //   context: wwwdir,
-    //   stylesheet: '/assets/css/main.css',
-    // }),
     new SvgSpritePlugin({ filename: '../../_includes/sprite.symbol.svg' }),
     new webpack.WatchIgnorePlugin([
       resolve(__dirname, './www/'),
       resolve(__dirname, './_layouts/**/*.html'),
     ]),
-    new WebpackShellPlugin({
-      //   onBuildStart: ['jekyll b --watch --config config.yml'],
-      //   onBuildEnd: 'inline-critical --html www/index.html --css www/assets/css/styles.css',
-      // onBuildExit: 'inline-critical --html www/index.html --css www/assets/css/main.css',
-    }),
   ],
   watchOptions: {
     aggregateTimeout: 1000,
