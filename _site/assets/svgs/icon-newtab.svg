@@ -1,0 +1,9 @@
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <title>
+    New Tab
+  </title>
+  <g fill="#FFF" fill-rule="evenodd">
+    <path d="M8.34 13.83h-6.6v-6.6h2.5V5.5H0v10.07h10.08v-4.15H8.34"/>
+    <path d="M7.3 8.34h6.6v-6.6H7.3v6.6zm-1.73 1.74h10.08V0H5.57v10.08z"/>
+  </g>
+</svg>

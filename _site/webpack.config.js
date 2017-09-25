@@ -73,7 +73,7 @@ module.exports = {
         loader: 'html-loader',
         options: {
           minimize: false,
-          removeComments: true,
+          removeComments: false,
           collapseWhitespace: true,
         },
       },
@@ -88,7 +88,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: resolve(__dirname, 'www/index.html'),
       filename: resolve(__dirname, 'www/index.html'),
-      inject: false,
     }),
     // new WebpackCritical({
     //   context: wwwdir,
@@ -99,11 +98,10 @@ module.exports = {
       resolve(__dirname, './www/'),
       resolve(__dirname, './_layouts/**/*.html'),
     ]),
-    new WebpackShellPlugin({
-      //   onBuildStart: ['jekyll b --watch --config config.yml'],
-      //   onBuildEnd: 'inline-critical --html www/index.html --css www/assets/css/styles.css',
-      // onBuildExit: 'inline-critical --html www/index.html --css www/assets/css/main.css',
-    }),
+    // new WebpackShellPlugin({
+    //   onBuildStart: ['jekyll b --watch --config config.yml'],
+    //   onBuildEnd: 'inline-critical --html www/index.html --css www/assets/css/styles.css',
+    // }),
   ],
   watchOptions: {
     aggregateTimeout: 1000,

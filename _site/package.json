@@ -7,11 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "npm run build && gh-pages -t -d www -b gh-pages",
     "clean": "rimraf www",
-    "inlinecriticalcss": "mv ./www/index.html ./www/index-orig.html && inline-critical --html ./www/index-orig.html --css ./www/assets/css/main.css > ./www/index.html",
+    "mydev": "npm run clean && npm run jekyll && npm run webpack:dev",
+    "criticalinline": "inline-critical --html ./www/index.html --css ./www/assets/css/main.css > ./www/index.html",
     "dev": "npm run clean && concurrently 'npm run jekyll:dev' 'npm run webpack:dev'",
-    "build": "npm run clean && npm run jekyll && npm run webpack && npm run inlinecriticalcss",
+    "build": "npm run clean && npm run jekyll && npm run webpack && npm run criticalinline",
     "jekyll": "cross-env JEKYLL_ENV=production jekyll build --config config.yml",
     "jekyll:dev": "jekyll serve --config config.yml --trace --verbose",
+    "stylesheets": "npm run stylesheets:compile && npm run stylesheets:postcss",
+    "stylesheets:dev": "node-sass assets/scss/main.scss --output-style=compressed --output=www/assets/css/ --watch",
+    "stylesheets:compile": "node-sass assets/scss/main.scss --output-style=compressed --output=www/assets/css/",
+    "stylesheets:postcss": "postcss --no-map www/assets/css/main.css --output=www/assets/css/main.css",
     "webpack": "cross-env NODE_ENV=production webpack --progress --config webpack.config.js",
     "webpack:dev": "webpack --config webpack.config.js --watch"
   },
@@ -35,6 +40,7 @@
     "concurrently": "^3.5.0",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
+    "cssnano": "^3.10.0",
     "eslint": "^4.7.2",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-plugin-import": "^2.7.0",
@@ -43,8 +49,8 @@
     "gh-pages": "^1.0.0",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
-    "inline-critical": "^2.4.2",
     "node-sass": "^4.5.3",
+    "postcss-cli": "^4.1.1",
     "postcss-loader": "^2.0.6",
     "resolve-url-loader": "^2.1.0",
     "rimraf": "^2.6.2",
@@ -53,12 +59,12 @@
     "uglifyjs-webpack-plugin": "^0.4.6",
     "url-loader": "^0.5.9",
     "webpack": "^3.6.0",
+    "webpack-critical": "^1.0.0",
+    "webpack-shell-plugin": "^0.5.0",
     "webpack-svg-sprite-plugin": "^1.2.0"
   },
-  "dependencies": {},
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  "dependencies": {
+    "underscore-template-loader": "^0.8.0"
+  },
+  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"]
 }

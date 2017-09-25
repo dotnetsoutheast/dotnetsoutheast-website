@@ -1,0 +1,9 @@
+<svg width="20" height="22" viewBox="0 0 20 22" xmlns="http://www.w3.org/2000/svg">
+  <title>
+    Calendar
+  </title>
+  <g fill="#5C2D91" fill-rule="evenodd">
+    <path d="M2.18 19.08h15.05V7.38H2.18v11.7zm12.8-16.4V0h-2.64v2.7H7.07V0H4.43v2.7H0v18.76h19.5V2.7H15z"/>
+    <path d="M8.46 15.98h2.63V13.3H8.45M4.48 15.98h2.64V13.3H4.48M4.48 11.95h2.64V9.27H4.48M8.44 11.95h2.63V9.27H8.44M12.4 11.95h2.63V9.27H12.4"/>
+  </g>
+</svg>
